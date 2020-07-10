@@ -30,39 +30,6 @@ into phosphor-host-postd and phosphor-post-code-manager.
 
 ##phosphor-host-postd
 
-+----------------------------------+                           +--------------------+
-|  +-------------------------------+                           |                    |
-|  |Phosphor+host+postd            |                           |                    |
-|  |                    +----------+                           +------------+       |
-|  |                    | LPC      |                           |            |       |
-|  |                    |          +<--------------------------+            |       |
-|  |                    +----------+                           |  LPC       |       |
-|  |                               |                           |            |       |
-|  |xyz.openbmc_project.State.     +<--------------------+     +------------+       |
-|  |Boot.Raw.Value                 |                     |     |                    |
-|  +------+------------------------+                     |     |         Host       |
-|         |                        |                     |     |                    |
-|         +                        |                     |     |                    |
-|   postcode change event          |                     +     +--------------------+
-|         +                        |  xyz.openbmc_project.State.Boot.Raw
-|         |                        |                     +
-|         v                        |                     |      +------------------+
-|  +------+------------------------+                     +----->+                  |
-|  |Phosphor+postcode|manager      |                            |   Web browser    |
-|  |                 +-------------+                            |                  |
-|  |                 |   postcode  +<-------------------------->+                  |
-|  |                 |   history   |                            |                  |
-|  |                 +-------------+                            +------------------+
-|  +-------------------------------+  xyz.openbmc_project.State.Boot.PostCode
-|                                  |
-|    BMC                           |
-|  +-------------------------------+                           +----------------------+
-|  |                               |                           |                      |
-|  |     SGPIO                     +---+GPIOs(8 line)  +-----> |                      |
-|  |                               |                           |     7 segment        |
-|  +-------------------------------+                           |     Display          |
-|                                  |                           |                      |
-+----------------------------------+                           +----------------------+
 
 
 The below device entry added in tiogapass DTS to create the LPC device(aspeed-lpc-snoop) in /dev
@@ -170,6 +137,6 @@ Change single process into a multi-process to handle multi-host postcode history
 ## Alternatives Considered
 Considered using to read post-code directly from Bridge IC under [fb-yv2-misc](https://github.com/HCLOpenBMC/fb-yv2-misc) instead of using [fb-ipmi-oem](https://github.com/openbmc/fb-ipmi-oem).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDEyMjExMzIsLTEwNDA4OTIzMzJdfQ
+eyJoaXN0b3J5IjpbLTEwMjYxMjM2MDAsLTEwNDA4OTIzMzJdfQ
 ==
 -->
