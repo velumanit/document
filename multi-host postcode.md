@@ -30,6 +30,41 @@ into phosphor-host-postd and phosphor-post-code-manager.
 
 ##phosphor-host-postd
 
++----------------------------------------------+                       +------------------+
+| +-----------------------------------+        +<-----+I2C/IPMI+------>+BIC||             |
+| |       fb-ipmi-oem                 +<----+--+                       +----|     Host1   |
+| |   (ipmi interrupt handler)        |     ^  |                       +------------------+
+| +-----------------------------------+     |  |
+| +-----------------------------------+     |  |                           +------------------+
+| |     fb-yv2-misc                   |     <---<------+I2C/IPMI+--------->+BIC|--|           |
+| |                                   |     |  |                           +------|   Host2   |
+| | xyz.openbmc_project.              |     |  |                           +------------------+
+| |  State.Hostx.Boot.Raw.Value       |     |  |
+| +---------------+----------+--------+     |  |                                  +-------------------+
+|  postcode       |          |        +     <---<------------+I2C/IPMI+---------->BIC|-|              |
+|  event0         +          |   postcode   |  |                                  +----|  Host3       |
+|    +         postcode      |   event3     |  |                                  +-------------------+
+|    |         event1        +        +     |  |
+|    |            +        postcode   |     |  |                                          +--------------------+
+|    |            |        event2     |     |  |                                          +-----|   Host4      |
+|    |            |          +        |     +---<---------------+I2C/IPMI+--------------->+BIC|-|              |
+|    |            |          |        |        |                                          +--------------------+
+|    v            v          v        v        |                                                        +--------------------+
+|  +-+------------+----------+--------+---+    |    xyz.openbmc_project.State.Host0.Boot.Raw            |                    |
+|  |                                      +<----<--+xyz.openbmc_project.State.Host1.Boot.Raw+---------->+                    |
+|  |         +--------+                   |    |    xyz.openbmc_project.State.Host2.Boot.Raw            |                    |
+|  |          history1                    |    |    xyz.openbmc_project.State.Host3.Boot.Raw            |                    |
+|  |         +--------+        +--------+ |    |                                                        |  Web browser       |
+|  |                           | history3 |    |                                                        |                    |
+|  +--------+                  +--------+ |    |    xyz.openbmc_project.State.Host0.Boot.PostCode       |                    |
+|  |history0|                             +<----<--+xyz.openbmc_project.State.Host1.Boot.PostCode+----->+                    |
+|  +--------+       +--------+            |    |    xyz.openbmc_project.State.Host2.Boot.PostCode       |                    |
+|  |                 history2|            |    |    xyz.openbmc_project.State.Host3.Boot.PostCode       |                    |
+|  |                +--------+            |    |                                                        +--------------------+
+|  |                                      |    |           +--------------------+
+|  | Phosphor-post-code-manager           |    ++GPIOs+--->+ 7 segment display  |
+|  +--------------------------------------+    |           |                    |
++----------------------------------------------+           +--------------------+
 
 
 The below device entry added in tiogapass DTS to create the LPC device(aspeed-lpc-snoop) in /dev
@@ -137,6 +172,6 @@ Change single process into a multi-process to handle multi-host postcode history
 ## Alternatives Considered
 Considered using to read post-code directly from Bridge IC under [fb-yv2-misc](https://github.com/HCLOpenBMC/fb-yv2-misc) instead of using [fb-ipmi-oem](https://github.com/openbmc/fb-ipmi-oem).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjYxMjM2MDAsLTEwNDA4OTIzMzJdfQ
-==
+eyJoaXN0b3J5IjpbLTE0NjgyMTc0MDIsLTEwMjYxMjM2MDAsLT
+EwNDA4OTIzMzJdfQ==
 -->
