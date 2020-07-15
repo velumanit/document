@@ -118,7 +118,7 @@ POST code history.
 
   Provide a command for user to see the all postcode for any given server.
 
-## fb-ipmi-oem
+##  fb-ipmi-oem
 Register Bridge IC OEM callback interrupt handler for a postcode(cmd = 0x08, netfn=0x38, lun=00).
 
 Extract port 80 data from IPMI response based on length.
@@ -148,5 +148,5 @@ Change single process into a multi-process to handle multi-host postcode history
 ## Alternatives Considered
 Considered using to read post-code directly from Bridge IC under [fb-yv2-misc](https://github.com/HCLOpenBMC/fb-yv2-misc) instead of using [fb-ipmi-oem](https://github.com/openbmc/fb-ipmi-oem).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1NDk5NjA4OF19
+eyJoaXN0b3J5IjpbNTQ4OTQ1MTY2LC0yNTQ5OTYwODhdfQ==
 -->
