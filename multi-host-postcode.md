@@ -29,7 +29,7 @@ into phosphor-host-postd and phosphor-post-code-manager.
 [fb-ipmi-oem](https://github.com/openbmc/fb-ipmi-oem)
 
 
-##phosphor-host-postd
+## phosphor-host-postd
 
 
 The below device entry added in tiogapass DTS to create the LPC device(aspeed-lpc-snoop) in /dev
@@ -135,5 +135,5 @@ Change single process into a multi-process to handle multi-host postcode history
 ## Alternatives Considered
 Considered using to read post-code directly from Bridge IC under [fb-yv2-misc](https://github.com/HCLOpenBMC/fb-yv2-misc) instead of using [fb-ipmi-oem](https://github.com/openbmc/fb-ipmi-oem).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5NDE1NzYwNywtMjA3MDk2MTM5Ml19
+eyJoaXN0b3J5IjpbODEzNjU1MTYxLC0yMDcwOTYxMzkyXX0=
 -->
