@@ -29,7 +29,41 @@ into phosphor-host-postd and phosphor-post-code-manager.
 
 
 ##phosphor-host-postd
-
+--
++--------------------------+                             +-------------+
+| +------------------------+                             |             |
+| phosphor-host-postd      |                             |             |
+| |               +--------+  /dev/apeed-lpc-snoop       +--------+    |
+| |               |        |<----------------------------|LPC     |    |
+| |               |LPC     |                             |        |    |
+| |               |        |                             |        |    |
+| |xyz.Openbmc_project.----+                             +--------+    |
+| |State.Boot.Raw.Value    |                             |             |
+| +-------------/----------+                             |             |
+|               |          |                             |             |
+|               |          |                             |             |
+|      BMC      |          |                             +-------------+
+|               |          |
+|               |          |
+|  +------------\----------+   xyz.openbmc_project.      +-------------+
+|  |         +-------------+    State.Boot.Postcode      |             |
+|  |         |             |<--------------------------->|ipmi/https   |
+|  |         |  postcode   |                             |             |
+|  |         |  history    |                             |             |
+|  |         +-------------+                             |             |
+|  |phosphor-post-code-manager                           |             |
+|  +-----------------------+                             +-------------+
+|                          |
+|                          |
+|                          |
+|                          |                             +-------------+
+|  +-----------------------+                             | seven segment
+|  |                       |                             |   display   |
+|  |        SGPIO          |----8GPIOs------------------>|             |
+|  |                       |                             |             |
+|  |                       |                             |             |
+|  +-----------------------+                             +-------------+
++--------------------------+
 
 The below device entry added in tiogapass DTS to create the LPC device(aspeed-lpc-snoop) in /dev
 
@@ -136,5 +170,5 @@ Change single process into a multi-process to handle multi-host postcode history
 ## Alternatives Considered
 Considered using to read post-code directly from Bridge IC under [fb-yv2-misc](https://github.com/HCLOpenBMC/fb-yv2-misc) instead of using [fb-ipmi-oem](https://github.com/openbmc/fb-ipmi-oem).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4MTY3Mjc3MF19
+eyJoaXN0b3J5IjpbLTY3ODgzMDU5OCwxOTgxNjcyNzcwXX0=
 -->
