@@ -104,10 +104,6 @@ at 26 1 2 2 3 3 4 5 6 5 6 183 97 154 104 121 213 151 178 156 146 192 193 173 132
 **root@tiogapass:~# busctl call xyz.openbmc_project.State.Boot.PostCode /xyz/openbmc_project/State/Boot/PostCode xyz.openbmc_project.State.Boot.PostCode GetPostCodes q 3**
 at 26 2 1 2 3 4 5 6 4 5 6 183 97 154 104 121 213 151 178 156 146 192 193 173 132 132 0
 
-**root@tiogapass:~# busctl call xyz.openbmc_project.State.Boot.PostCode /xyz/openbmc_project/State/Boot/PostCode xyz.openbmc_project.State.Boot.PostCode GetPost
-Codes q 4**
-at 0
-
 ## Requirements
 
  - Send POST code to 8-segment LED display on Debug Card.
@@ -139,5 +135,5 @@ Change single process into a multi-process to handle multi-host postcode history
 ## Alternatives Considered
 Considered using to read post-code directly from Bridge IC under [fb-yv2-misc](https://github.com/HCLOpenBMC/fb-yv2-misc) instead of using [fb-ipmi-oem](https://github.com/openbmc/fb-ipmi-oem).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5MzIwMDY1NiwtMjA3MDk2MTM5Ml19
+eyJoaXN0b3J5IjpbMTQ4NTI4MzE5LC0yMDcwOTYxMzkyXX0=
 -->
