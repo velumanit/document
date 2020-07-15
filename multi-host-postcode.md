@@ -64,7 +64,7 @@ to move these declarations to be global and extern to the other object.
 **root@tiogapass:~# busctl get-property xyz.openbmc_project.State.Boot.Raw /xyz/openbmc_project/state/boot/raw xyz.openbmc_project.State.Boot.Raw Value**
 t 0
 
-##phosphor-post-code-manager 
+## phosphor-post-code-manager 
 
 This daemon [phosphor-post-code-manager](https://github.com/openbmc/phosphor-post-code-manager) monitors post code posted on dbus interface /xyz/openbmc_project/state/boot/raw by snoopd daemon [phosphor-host-postd](https://github.com/openbmc/phosphor-host-postd)
 and save them in a file under /var/lib/phosphor-post-code-manager for history.
@@ -135,5 +135,5 @@ Change single process into a multi-process to handle multi-host postcode history
 ## Alternatives Considered
 Considered using to read post-code directly from Bridge IC under [fb-yv2-misc](https://github.com/HCLOpenBMC/fb-yv2-misc) instead of using [fb-ipmi-oem](https://github.com/openbmc/fb-ipmi-oem).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4NTI4MzE5LC0yMDcwOTYxMzkyXX0=
+eyJoaXN0b3J5IjpbLTg5NDE1NzYwNywtMjA3MDk2MTM5Ml19
 -->
