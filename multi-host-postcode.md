@@ -33,6 +33,41 @@ into phosphor-host-postd and phosphor-post-code-manager.
  **phosphor-host-postd**
 
 
++----------------------------------+                           +--------------------+
+|  +-------------------------------+                           |                    |
+|  |Phosphor-host-postd            |                           |                    |
+|  |                    +----------+                           +------------+       |
+|  |                    | LPC      |                           |            |       |
+|  |                    |          +<--------------------------+            |       |
+|  |                    +----------+                           |  LPC       |       |
+|  |                               |                           |            |       |
+|  |xyz.openbmc_project.State.     +<--------------------+     +------------+       |
+|  |Boot.Raw.Value                 |                     |     |                    |
+|  +------+------------------------+                     |     |         Host       |
+|         |                        |                     |     |                    |
+|         +                        |                     |     |                    |
+|   postcode change event          |                     +     +--------------------+
+|         +                        |  xyz.openbmc_project.State.Boot.Raw
+|         |                        |                     +
+|         v                        |                     |      +------------------+
+|  +------+------------------------+                     +----->+                  |
+|  |Phosphor-postcode-manager      |                            |   https    |
+|  |                 +-------------+                            |                  |
+|  |                 |   postcode  +<-------------------------->+                  |
+|  |                 |   history   |                            |                  |
+|  |                 +-------------+                            +------------------+
+|  +-------------------------------+  xyz.openbmc_project.State.Boot.PostCode
+|                                  |
+|    BMC                           |
+|  +-------------------------------+                           +----------------------+
+|  |                               |                           |                      |
+|  |     SGPIO                     +----GPIOs(8 line)  ------> |                      |
+|  |                               |                           |     7 segment        |
+|  +-------------------------------+                           |     Display          |
+|                                  |                           |                      |
++----------------------------------+                           +----------------------+
+
+
 The below device entry added in tiogapass DTS to create the LPC device(aspeed-lpc-snoop) in /dev
 
 &lpc_snoop {
