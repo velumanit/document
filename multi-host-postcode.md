@@ -26,6 +26,7 @@ into phosphor-host-postd and phosphor-post-code-manager.
 [OCP Debug Card with LCD Spec v1.0](http://files.opencompute.org/oc/public.php?service=files&t=4d86c4bcd365cd733ee1c4fa129bafca&download)
 
 [fb-yv2-misc](https://github.com/HCLOpenBMC/fb-yv2-misc)
+
 [fb-ipmi-oem](https://github.com/openbmc/fb-ipmi-oem)
 
 
@@ -135,5 +136,5 @@ Change single process into a multi-process to handle multi-host postcode history
 ## Alternatives Considered
 Considered using to read post-code directly from Bridge IC under [fb-yv2-misc](https://github.com/HCLOpenBMC/fb-yv2-misc) instead of using [fb-ipmi-oem](https://github.com/openbmc/fb-ipmi-oem).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzNDI2MDE5M119
+eyJoaXN0b3J5IjpbLTE0NzkwODYwMzFdfQ==
 -->
