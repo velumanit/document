@@ -176,6 +176,3 @@ Change single process into a multi-process to handle multi-host postcode history
 
 ## Alternatives Considered
 Considered using to read post-code directly from Bridge IC under [fb-yv2-misc](https://github.com/HCLOpenBMC/fb-yv2-misc) instead of using [fb-ipmi-oem](https://github.com/openbmc/fb-ipmi-oem).
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODEwODYyMzVdfQ==
--->
