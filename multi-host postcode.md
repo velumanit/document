@@ -30,7 +30,6 @@ into phosphor-host-postd and phosphor-post-code-manager.
 
 ##phosphor-host-postd
 --
-
 +--------------------------+                             +-------------+
 | +------------------------+                             |             |
 | phosphor-host-postd      |                             |             |
@@ -171,7 +170,7 @@ Change single process into a multi-process to handle multi-host postcode history
 ## Alternatives Considered
 Considered using to read post-code directly from Bridge IC under [fb-yv2-misc](https://github.com/HCLOpenBMC/fb-yv2-misc) instead of using [fb-ipmi-oem](https://github.com/openbmc/fb-ipmi-oem).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwMzc3NTMwOCwtNTc4ODE4NjM2LDE5OD
-E2NzI3NzAsLTU3ODgxODYzNiwtMTQ2ODIxNzQwMiwtMTAyNjEy
-MzYwMCwtMTA0MDg5MjMzMl19
+eyJoaXN0b3J5IjpbLTY3ODgzMDU5OCwxODAzNzc1MzA4LC01Nz
+g4MTg2MzYsMTk4MTY3Mjc3MCwtNTc4ODE4NjM2LC0xNDY4MjE3
+NDAyLC0xMDI2MTIzNjAwLC0xMDQwODkyMzMyXX0=
 -->
