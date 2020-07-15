@@ -109,10 +109,10 @@ at 0
 
 ## Requirements
 
-Send POST code to 8-segment LED display on Debug Card
+Send POST code to 8-segment LED display on Debug Card.
   The POST code has to be from one of the server selected based on manual selection switch at front panel in debug card.
   Provide a command for user to read current postcode.
-POST code history
+POST code history.
   Provide a command for user to see the all postcode for any given server.
 
 ## fb-ipmi-oem
@@ -136,8 +136,8 @@ Change single process into a multi-process to handle multi-host postcode history
 ## Alternatives Considered
 Considered using to read post-code directly from Bridge IC under [fb-yv2-misc](https://github.com/HCLOpenBMC/fb-yv2-misc) instead of using [fb-ipmi-oem](https://github.com/openbmc/fb-ipmi-oem).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4MTY3Mjc3MCwtNjc4ODMwNTk4LDE4MD
-M3NzUzMDgsLTU3ODgxODYzNiwxOTgxNjcyNzcwLC01Nzg4MTg2
-MzYsLTE0NjgyMTc0MDIsLTEwMjYxMjM2MDAsLTEwNDA4OTIzMz
-JdfQ==
+eyJoaXN0b3J5IjpbMTIxNjg2Njc4OCwxOTgxNjcyNzcwLC02Nz
+g4MzA1OTgsMTgwMzc3NTMwOCwtNTc4ODE4NjM2LDE5ODE2NzI3
+NzAsLTU3ODgxODYzNiwtMTQ2ODIxNzQwMiwtMTAyNjEyMzYwMC
+wtMTA0MDg5MjMzMl19
 -->
